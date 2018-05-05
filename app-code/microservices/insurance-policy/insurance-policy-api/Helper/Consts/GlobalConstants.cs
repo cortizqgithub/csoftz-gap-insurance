@@ -21,7 +21,14 @@ namespace Insurance.Policy.Api.Helper.Consts
     public class GlobalConstants
     {
         // General
-        public const string POSTGRESQL_CONN_STRING = "Server=localhost;Port=5432;Database=myDataBase;Userid=myUsername;Password=myPassword;Protocol=3;Pooling=true;MinPoolSize=1;MaxPoolSize=20;ConnectionLifeTime=15;";
+        public const string POSTGRESQL_CONN_STRING = "Server=localhost;Port=5432;Database=csoftz-insurance;Userid=postgres;Password=Ceiba1234!;Pooling=true;MinPoolSize=1;MaxPoolSize=20;";
 
-    }
+        // Insurance Policy SQL
+        public const string INSURANCE_POLICY_GET_ALL = "select * from insurance_policy;";
+        public const string INSURANCE_POLICY_FIND_BY_ID = "select * from insurance_policy where id = @Id;";
+        public const string INSURANCE_POLICY_SAVE = @"insert into insurance_policy(""Id"", ""Name"", ""Description"", ""CoverageType"",
+                                                     ""StartDate"", ""CoveragePeriod"", ""Price"", ""RiskType"") values(@Id, @Name,
+                                                     @Description, @CoverageType, @StartDate, @CoveragePeriod, @Price, @RiskType)";
+
+   }
 }

@@ -28,7 +28,7 @@ namespace Insurance.Policy.Api.Domain
         public DateTime StartDate { get; set; }
         public int CoveragePeriod { get; set; } // In months
         public Double Price { get; set; } 
-        public int RistType { get; set; }
+        public int RiskType { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Insurance.Policy.Api.Domain.InsurancePolicy"/> class.
@@ -59,7 +59,7 @@ namespace Insurance.Policy.Api.Domain
             this.StartDate = startDate;
             this.CoveragePeriod = coveragePeriod;
             this.Price = price;
-            this.RistType = riskType;
+            this.RiskType = riskType;
         }
     }
 }

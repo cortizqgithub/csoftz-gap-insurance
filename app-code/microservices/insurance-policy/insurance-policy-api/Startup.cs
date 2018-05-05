@@ -11,10 +11,15 @@
  History
  May.04/2018 COQ  File created.
  -----------------------------------------------------------------------------*/
+using Insurance.Policy.Api.Repository;
+using Insurance.Policy.Api.Repository.Interfaces;
+using Insurance.Policy.Api.Services;
+using Insurance.Policy.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Insurance.Policy.Api.Helper.Consts;
 
 namespace Insurance.Policy.Api
 {
@@ -37,6 +42,8 @@ namespace Insurance.Policy.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<IInsurancePolicyRepository>(new InsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING));
+            services.AddSingleton<IInsurancePolicyService>( new InsurancePolicyService(new InsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING)));
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",

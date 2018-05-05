@@ -12,6 +12,9 @@
  History
  May.04/2018 COQ  File created.
  -----------------------------------------------------------------------------*/
+using System.Collections.Generic;
+using Insurance.Policy.Api.Domain;
+using Insurance.Policy.Api.Repository.Interfaces;
 using Insurance.Policy.Api.Services.Interfaces;
 
 namespace Insurance.Policy.Api.Services
@@ -21,8 +24,44 @@ namespace Insurance.Policy.Api.Services
     /// </summary>
     public class InsurancePolicyService : IInsurancePolicyService
     {
-        public InsurancePolicyService()
+        private IInsurancePolicyRepository insurancePolicyRepository;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:Insurance.Policy.Api.Services.InsurancePolicyService"/> class.
+        /// </summary>
+        /// <param name="insurancePolicyRepository">Injects an instance of an Insurance policy repository.</param>
+        public InsurancePolicyService(IInsurancePolicyRepository insurancePolicyRepository)
         {
+            this.insurancePolicyRepository = insurancePolicyRepository;
+        }
+
+        /// <summary>
+        /// Gets all records in InsurancePolicy Table.
+        /// </summary>
+        /// <returns>List of existing records</returns>
+        public List<InsurancePolicy> GetAll()
+        {
+            return this.insurancePolicyRepository.GetAll();
+        }
+
+        /// <summary>
+        /// Finds a record by its identifier.
+        /// </summary>
+        /// <returns>The requested record else NULL</returns>
+        /// <param name="id">Identifier.</param>
+        public InsurancePolicy FindById(int id)
+        {
+            return this.insurancePolicyRepository.FindById(id);
+        }
+
+        /// <summary>
+        /// Inserts a new record to database storage.
+        /// </summary>
+        /// <returns>Count</returns>
+        /// <param name="info">Information to be stored.</param>
+        public int Save(InsurancePolicy info)
+        {
+            return this.insurancePolicyRepository.Save(info);
         }
     }
 }

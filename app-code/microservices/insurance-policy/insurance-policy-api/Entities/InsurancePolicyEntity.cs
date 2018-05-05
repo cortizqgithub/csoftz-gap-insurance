@@ -28,7 +28,7 @@ namespace Insurance.Policy.Api.Entities
         public DateTime StartDate { get; set; }
         public int CoveragePeriod { get; set; } // In months
         public Double Price { get; set; }
-        public int RistType { get; set; }
+        public int RiskType { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="T:Insurance.Policy.Api.Entities.InsurancePolicyEntity"/> class.
@@ -60,7 +60,7 @@ namespace Insurance.Policy.Api.Entities
             this.StartDate = startDate;
             this.CoveragePeriod = coveragePeriod;
             this.Price = price;
-            this.RistType = riskType;
+            this.RiskType = riskType;
         }
     }
 }
