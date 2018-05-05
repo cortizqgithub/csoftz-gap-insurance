@@ -20,3 +20,11 @@ saved data is destroyed.
 The other project is ASP.NET Core MVC Web App to consume that API.
 
 == Guide
+
+To install postgreSQL support.
+
+add 'ngpgsql' nuget package.
+
+https://www.youtube.com/watch?v=md20lQut9EE Uses Entity Framework underneath.
+
+Then add 'Dapper' ORM using 
