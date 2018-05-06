@@ -3,7 +3,7 @@
 /* Description:   Implementation Service to handle access to database objects */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
 /* Date:          May.04/2018                                                 */
-/* Last Modified: May.05/2018                                                 */
+/* Last Modified: May.06/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ                                                 */
 /*----------------------------------------------------------------------------*/
@@ -16,6 +16,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Dapper;
 using Insurance.Policy.Api.Domain;
+using Insurance.Policy.Api.Domain.View;
 using Insurance.Policy.Api.Helper.Consts;
 using Insurance.Policy.Api.Repository.Interfaces;
 using Npgsql;
@@ -42,11 +43,11 @@ namespace Insurance.Policy.Api.Repository
         /// Gets all records in InsurancePolicy Table.
         /// </summary>
         /// <returns>List of existing records</returns>
-        public List<InsurancePolicy> GetAll()
+        public List<InsurancePolicyView> GetAll()
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                return connection.Query<InsurancePolicy>(GlobalConstants.INSURANCE_POLICY_GET_ALL).ToList();
+                return connection.Query<InsurancePolicyView>(GlobalConstants.INSURANCE_POLICY_GET_ALL).ToList();
             }
         }
 

@@ -3,7 +3,7 @@
 /* Description:   REST API Controller for Insurance Policy Domain Objects     */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
 /* Date:          May.05/2018                                                 */
-/* Last Modified: May.05/2018                                                 */
+/* Last Modified: May.06/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ                                                 */
 /*----------------------------------------------------------------------------*/
@@ -12,11 +12,12 @@
  History
  May.05/2018 COQ  File created.
  -----------------------------------------------------------------------------*/
-using Microsoft.AspNetCore.Mvc;
-using Insurance.Policy.Api.Services.Interfaces;
+using System;
 using System.Collections.Generic;
 using Insurance.Policy.Api.Domain;
-using System;
+using Insurance.Policy.Api.Domain.View;
+using Insurance.Policy.Api.Services.Interfaces;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Insurance.Policy.Api.Controllers
 {
@@ -43,7 +44,7 @@ namespace Insurance.Policy.Api.Controllers
         /// </summary>
         /// <returns>A list of all users</returns>
         [HttpGet]
-        public List<InsurancePolicy> GetAll()
+        public List<InsurancePolicyView> GetAll()
         {
             return insurancePolicyService.GetAll();
         }
