@@ -1,9 +1,9 @@
 ﻿/*----------------------------------------------------------------------------*/
-/* Source File:   COVERAGETYPE.CS                                             */
+/* Source File:   COVERAGETYPECONSTANTS.CS                                    */
 /* Description:   Coverage types associated to the Insurance Policy           */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
 /* Date:          May.05/2018                                                 */
-/* Last Modified: May.05/2018                                                 */
+/* Last Modified: May.06/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ                                                 */
 /*----------------------------------------------------------------------------*/
