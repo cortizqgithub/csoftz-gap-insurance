@@ -24,7 +24,7 @@ namespace Insurance.Policy.Api.Controllers
     /// REST API Controller for Risk Type Domain Objects
     /// </summary>
     [Route("insurance/api/v1/[controller]")]
-    public class RiskTypeController
+    public class RiskTypeController : Controller
     {
         private IRiskTypeService riskTypeService;
 

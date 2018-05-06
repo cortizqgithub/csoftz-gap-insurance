@@ -45,6 +45,8 @@ namespace Insurance.Policy.Api.Domain.View
         /// <param name="coveragePeriod">Indicates the months of coverage for the Insurance Policy</param>
         /// <param name="price">Value to be paid for the Insurance Policy.</param>
         /// <param name="riskType">What kind of risk is the Insurance Policy.</param>
+        /// <param name="coverageTypeName">Description for Coverage Type</param>
+        /// <param name="riskTypeName">Description for Risk Type</param>
         public InsurancePolicyView(long id, string name, string description, int coverageType,
                                DateTime startDate, int coveragePeriod, Double price, int riskType,
                                string coverageTypeName, string riskTypeName)

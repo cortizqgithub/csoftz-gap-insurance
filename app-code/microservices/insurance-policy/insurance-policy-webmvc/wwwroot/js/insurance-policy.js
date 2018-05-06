@@ -1,23 +1,35 @@
-// File:     ADDRESS.JS
-// Created:  Feb.12/2018
-// Modified: Feb.13/2018
+// File:     INSURANCE-POLICY.JS
+// Created:  May.06/2018
+// Modified: May.06/2018
 
 function loadInfo() {
     var options = {};
-    options.url = urlAddress;
+    options.url = urlInsurancePolicy;
     options.type = "GET";
     options.dataType = "json";
     options.success = function (data) {
-        $("#address-list").empty();
+        var info = "";
+        $("#insurance-policy-list").empty();
+        info = "<table style='width:100%'>";
+        info += "<tr><td>ID</td><td>Name</td><td>Description</td>";
+        info += "<td>Coverage Type</td><td>Start Date</td><td>Coverage Period</td>";
+        info += "<td>Price</td><td>Risk Type</td>";
+        info += "</tr>";
+        
         data.forEach(function (element) {
-            $("#address-list").append("<li>"
-                + element.id + "-"
-                + element.name + "-"
-                + element.cityData.name + "-"
-                + element.cityData.stateData.name + "-"
-                + element.cityData.stateData.countryData.name
-                + "</li>");
+            info += "<tr>";
+            info += "<td>" + element.id + "</td>";
+            info += "<td>" + element.name + "</td>";
+            info += "<td>" + element.description + "</td>";
+            info += "<td>" + element.coverageTypeName + "</td>";
+            info += "<td>" + element.startDate + "</td>";
+            info += "<td>" + element.coveragePeriod + "</td>";
+            info += "<td>" + element.price + "</td>";
+            info += "<td>" + element.riskTypeName + "</td>";
+            info += "</tr>";
         });
+        info += "</table>";
+        $('#insurance-policy-list').append(info);
     };
 
     options.error = function () {
@@ -50,7 +62,7 @@ $(document).ready(function () {
         }
         else {
             var options = {};
-            options.url = urlAddress;
+            options.url = urlInsurancePolicy;
             options.type = "POST";
 
             var obj = {};
@@ -97,7 +109,7 @@ $(document).ready(function () {
 
         if (isValid) {
             var options = {};
-            options.url = urlAddress + "/" + idAddress;
+            options.url = urlInsurancePolicy + "/" + idAddress;
             options.type = "PUT";
 
             var obj = {};
@@ -130,7 +142,7 @@ $(document).ready(function () {
 
         if (isANumber(idAddress)) {
             var options = {};
-            options.url = urlAddress + "/" + idAddress;
+            options.url = urlInsurancePolicy + "/" + idAddress;
             options.type = "DELETE";
             options.datatype = "json";
             options.success = function (msg) {
@@ -147,21 +159,7 @@ $(document).ready(function () {
             $("#id").focus();
         }
     });
-
-    $("#countries").change(function () {
-        var idCountry = $("#countries option:selected").val();
-        $("#cities").empty();
-        loadStatesAndCityDefault(idCountry);
-    });
-
-    $("#states").change(function () {
-        var idCountry = $("#countries option:selected").val();
-        var idState = $("#states option:selected").val();
-        loadCities(idCountry, idState);
-    });
-    loadCountries();
-    loadStates(1);
-    loadCities(1, 1);
-
+    loadCoverageTypes();
+    loadRiskTypes();
     loadInfo();
 });

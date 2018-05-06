@@ -12,23 +12,6 @@ function isANumber(s) {
     return isNum;
 }
 
-function loadInsurancePolicies() {
-    var options = {};
-    options.url = urlInsurancePolicy;
-    options.type = "GET";
-    options.dataType = "json";
-    options.success = function (data) {
-        $("#insurancePolicy").empty();
-        data.forEach(function (element) {
-            $("#insurancePolicy").append("<option value=" + element.id + ">" + element.name + "</option>");
-        });
-    };
-    options.error = function () {
-        $("#msg").html("Error while calling the Web API!");
-    };
-    $.ajax(options);
-}
-
 function loadCoverageTypes() {
     var options = {};
     options.url = urlCoverageType;

@@ -6,11 +6,11 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="js/global.js?v=20180506"></script>
 <script src="js/insurance-policy.js?v=20180506"></script>
-<h1>Address List</h1>
+<h1>Insurance Policy</h1>
 <p id="msg"></p>
-<div id="address-list"></div>
+<div id="insurance-policy-list"></div>
 <br/>
-<h2>Register Address</h2>
+<h2>Register Insurance Policy</h2>
 <form>
     <table>
         <tr>
@@ -18,20 +18,32 @@
             <td><input id="id" type="text" /></td>
         </tr>
         <tr>
-            <td>Address: </td>
+            <td>Name: </td>
             <td><input id="name" type="text" /></td>
         </tr>
         <tr>
-            <td>Country:</td>
-            <td><select id="countries"></select></td>
+            <td>Description:</td>
+            <td><input id="description" type="text" /></td>
         </tr>
         <tr>
-            <td>State:</td>
-            <td><select id="states"></select></td>
+            <td>Coverage Type:</td>
+            <td><select id="coverageTypes"></select></td>
+        </tr>
+         <tr>
+            <td>Start Date:</td>
+            <td><input id="startDate" type="text" /></td>
         </tr>
         <tr>
-            <td>City:</td>
-            <td><select id="cities"></select></td>
+            <td>Coverage Period:</td>
+            <td><input id="coveragePeriod" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input id="price" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Risk Type:</td>
+            <td><select id="riskTypes"></select></td>
         </tr>
         <tr>
             <td colspan="2">&nbsp;</td>

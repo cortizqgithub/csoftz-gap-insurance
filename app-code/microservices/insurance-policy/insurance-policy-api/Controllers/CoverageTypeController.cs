@@ -24,7 +24,7 @@ namespace Insurance.Policy.Api.Controllers
     /// REST API Controller for Coverage Type Domain Objects.
     /// </summary>
     [Route("insurance/api/v1/[controller]")]
-    public class CoverageTypeController
+    public class CoverageTypeController : Controller
     {
         private ICoverageTypeService coverageTypeService;
 
