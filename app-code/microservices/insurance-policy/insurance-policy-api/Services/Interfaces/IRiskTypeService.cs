@@ -1,8 +1,8 @@
 ﻿/*----------------------------------------------------------------------------*/
-/* Source File:   COVERAGETYPECONSTANTS.CS                                    */
-/* Description:   Coverage types associated to the Insurance Policy           */
+/* Source File:   IRISKTYPESERVICE.CS                                         */
+/* Description:   Interface to handle Risk Type Entities                      */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
-/* Date:          May.05/2018                                                 */
+/* Date:          May.06/2018                                                 */
 /* Last Modified: May.06/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ                                                 */
@@ -10,18 +10,22 @@
 
 /*-----------------------------------------------------------------------------
  History
- May.05/2018 COQ  File created.
+ May.06/2018 COQ  File created.
  -----------------------------------------------------------------------------*/
-namespace Insurance.Policy.Api.Helper.Consts
+using System.Collections.Generic;
+using Insurance.Policy.Api.Domain;
+
+namespace Insurance.Policy.Api.Services.Interfaces
 {
     /// <summary>
-    /// Coverage types associated to the Insurance Policy
+    /// Interface to handle Risk Type Entities
     /// </summary>
-    public class CoverageTypeConstants
+    public interface IRiskTypeService
     {
-        public const int EARTHQUAKE = 1;
-        public const int FIRE = 2;
-        public const int THEFT = 3;
-        public const int LOSS = 4;
+        /// <summary>
+        /// Gets all records in Insurance Risk Type Table.
+        /// </summary>
+        /// <returns>List of existing records</returns>
+        List<RiskType> GetAll();
     }
 }

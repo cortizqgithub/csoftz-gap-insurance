@@ -39,6 +39,8 @@ namespace Insurance.Policy.Api.Helper.Consts
                                                             ""RiskType"" = @RiskType 
                                                         where ""Id"" = @Id;";
         public const string INSURANCE_POLICY_DELETE = @"delete from insurance_policy where ""Id"" = @Id;";
+        public const string COVERAGE_TYPE_GET_ALL = @"select coverage_type_id CoverageTypeId, name from insurance_coverage_type;";
+        public const string RISK_TYPE_GET_ALL = @"select insurance_risk_type RiskTypeId, Name from insurance_risk_type;";
 
    }
 }

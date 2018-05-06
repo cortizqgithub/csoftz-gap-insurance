@@ -1,8 +1,8 @@
 ﻿/*----------------------------------------------------------------------------*/
-/* Source File:   INSURANCEPOLICYCONTROLLER.CS                                */
-/* Description:   REST API Controller for Insurance Policy Domain Objects     */
+/* Source File:   COVERAGETYPECONTROLLER.CS                                   */
+/* Description:   REST API Controller for Coverage Type Domain Objects        */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
-/* Date:          May.05/2018                                                 */
+/* Date:          May.06/2018                                                 */
 /* Last Modified: May.06/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ                                                 */
@@ -10,43 +10,42 @@
 
 /*-----------------------------------------------------------------------------
  History
- May.05/2018 COQ  File created.
+ May.06/2018 COQ  File created.
  -----------------------------------------------------------------------------*/
 using System;
 using System.Collections.Generic;
 using Insurance.Policy.Api.Domain;
-using Insurance.Policy.Api.Domain.View;
 using Insurance.Policy.Api.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Insurance.Policy.Api.Controllers
 {
     /// <summary>
-    /// REST API Controller for Insurance Policy Domain Objects
+    /// REST API Controller for Coverage Type Domain Objects.
     /// </summary>
     [Route("insurance/api/v1/[controller]")]
-    public class InsurancePolicyController
+    public class CoverageTypeController
     {
-        private IInsurancePolicyService insurancePolicyService;
+        private ICoverageTypeService coverageTypeService;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Insurance.Policy.Api.Controllers.InsurancePolicyController"/> class.
+        /// Initializes a new instance of the <see cref="T:Insurance.Policy.Api.Controllers.CoverageTypeController"/> class.
         /// </summary>
-        /// <param name="insurancePolicyService">Injects instance to an Insurance policy service.</param>
-        public InsurancePolicyController(IInsurancePolicyService insurancePolicyService)
+        /// <param name="coverageTypeService">Injects an instance to a Coverage type service.</param>
+        public CoverageTypeController(ICoverageTypeService coverageTypeService) 
         {
-            this.insurancePolicyService = insurancePolicyService;
+            this.coverageTypeService = coverageTypeService;
         }
 
         /// <summary>
-        /// Responds to the URL: GET /insurance/api/v1/insurancepolicy/all
+        /// Responds to the URL: GET /insurance/api/v1/coveragetype/all
         /// Retrieves all records.
         /// </summary>
-        /// <returns>A list of all Insurance Policy</returns>
+        /// <returns>A list of all Coverage Type</returns>
         [HttpGet]
-        public List<InsurancePolicyView> GetAll()
+        public List<CoverageType> GetAll()
         {
-            return insurancePolicyService.GetAll();
+            return coverageTypeService.GetAll();
         }
     }
 }

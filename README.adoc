@@ -28,3 +28,15 @@ add 'ngpgsql' nuget package.
 https://www.youtube.com/watch?v=md20lQut9EE Uses Entity Framework underneath.
 
 Then add 'Dapper' ORM using 
+
+== REST API URLs
+Following you will find the URLs to get to each REST API method.
+
+=== Coverage Type
+GET: /insurance/api/v1/coveragetype
+
+=== Insurance Policy
+GET: /insurance/api/v1/insurancepolicy
+
+=== Risk Type
+GET: /insurance/api/v1/risktype

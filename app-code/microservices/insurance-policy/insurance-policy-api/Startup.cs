@@ -3,7 +3,7 @@
 /* Description:   Main entry point to configure ASP.NET Core Web Api app.     */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
 /* Date:          May.04/2018                                                 */
-/* Last Modified: May.04/2018                                                 */
+/* Last Modified: May.06/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ.                                                */
 /*----------------------------------------------------------------------------*/
@@ -43,7 +43,12 @@ namespace Insurance.Policy.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IInsurancePolicyRepository>(new InsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING));
-            services.AddSingleton<IInsurancePolicyService>( new InsurancePolicyService(new InsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING)));
+            services.AddSingleton<IInsurancePolicyService>(new InsurancePolicyService(new InsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING)));
+            services.AddSingleton<ICoverageTypeRepository>(new CoverageTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING));
+            services.AddSingleton<ICoverageTypeService>(new CoverageTypeService(new CoverageTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING)));
+            services.AddSingleton<IRiskTypeRepository>(new RiskTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING));
+            services.AddSingleton<IRiskTypeService>(new RiskTypeService(new RiskTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING)));
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAll",

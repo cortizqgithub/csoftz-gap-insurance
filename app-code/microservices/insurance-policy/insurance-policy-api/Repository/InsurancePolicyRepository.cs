@@ -1,6 +1,7 @@
 ﻿/*----------------------------------------------------------------------------*/
 /* Source File:   INSURANCEPOLICYREPOSITORY.CS                                */
-/* Description:   Implementation Service to handle access to database objects */
+/* Description:   Implementation Service to handle access to database         */
+/*                (Insurance Policy).                                         */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
 /* Date:          May.04/2018                                                 */
 /* Last Modified: May.06/2018                                                 */
@@ -24,7 +25,7 @@ using Npgsql;
 namespace Insurance.Policy.Api.Repository
 {
     /// <summary>
-    /// Implementation Service to handle access to database objects
+    /// Implementation Service to handle access to database (Insurance Policy).
     /// </summary>
     public class InsurancePolicyRepository : IInsurancePolicyRepository
     {

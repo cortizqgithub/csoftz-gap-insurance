@@ -1,6 +1,6 @@
 ﻿/*----------------------------------------------------------------------------*/
 /* Source File:   IINSURANCEPOLICYREPOSITORY.CS                               */
-/* Description:   Interface to handle access to database objects              */
+/* Description:   Interface to handle access to database (Insurance Policy)   */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
 /* Date:          May.04/2018                                                 */
 /* Last Modified: May.06/2018                                                 */
@@ -19,7 +19,7 @@ using Insurance.Policy.Api.Domain.View;
 namespace Insurance.Policy.Api.Repository.Interfaces
 {
     /// <summary>
-    /// Interface to handle access to database objects
+    /// Interface to handle access to database (Insurance Policy)
     /// </summary>
     public interface IInsurancePolicyRepository
     {
