@@ -47,7 +47,9 @@ namespace Insurance.Policy.Api.Repository
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                return connection.Query<InsurancePolicyView>(GlobalConstants.INSURANCE_POLICY_GET_ALL).ToList();
+                var insurancePolicyList = connection.Query<InsurancePolicyView>(GlobalConstants.INSURANCE_POLICY_GET_ALL).ToList();
+                insurancePolicyList.ForEach(e => e.Name = e.PolicyName);
+                return insurancePolicyList;
             }
         }
 
