@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insurance-policy-api", "insurance-policy-api\insurance-policy-api.csproj", "{77984AFA-AD16-4BD0-A5CF-02A53C919C3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "insurance-policy-webmvc", "insurance-policy-webmvc\insurance-policy-webmvc.csproj", "{7556A376-304B-4174-B817-30EBEBF13A7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,5 +15,9 @@ Global
 		{77984AFA-AD16-4BD0-A5CF-02A53C919C3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77984AFA-AD16-4BD0-A5CF-02A53C919C3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77984AFA-AD16-4BD0-A5CF-02A53C919C3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7556A376-304B-4174-B817-30EBEBF13A7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7556A376-304B-4174-B817-30EBEBF13A7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7556A376-304B-4174-B817-30EBEBF13A7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7556A376-304B-4174-B817-30EBEBF13A7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
