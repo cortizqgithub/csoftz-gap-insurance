@@ -1,0 +1,50 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/global.js?v=20180506"></script>
+<script src="js/insurance-policy.js?v=20180506"></script>
+<h1>Address List</h1>
+<p id="msg"></p>
+<div id="address-list"></div>
+<br/>
+<h2>Register Address</h2>
+<form>
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td><input id="id" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Address: </td>
+            <td><input id="name" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Country:</td>
+            <td><select id="countries"></select></td>
+        </tr>
+        <tr>
+            <td>State:</td>
+            <td><select id="states"></select></td>
+        </tr>
+        <tr>
+            <td>City:</td>
+            <td><select id="cities"></select></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" id="insert" 
+                       value="Insert" />
+                <input type="button" id="update" 
+                       value="Update" />
+                <input type="button" id="delete" 
+                       value="Delete" />
+            </td>
+        </tr>
+    </table>
+</form>
