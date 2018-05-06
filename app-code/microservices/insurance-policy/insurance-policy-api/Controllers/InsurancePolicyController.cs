@@ -55,7 +55,7 @@ namespace Insurance.Policy.Api.Controllers
         /// <returns>A HTTP Not Found or object found</returns>
         /// <param name="id">Identifier to look up.</param>
         [HttpGet("{id}", Name = "GetInsurancePolicyData")]
-        public IActionResult GetById(int id)
+        public IActionResult GetById(long id)
         {
             var item = insurancePolicyService.FindById(id);
             if (item == null)
@@ -115,7 +115,7 @@ namespace Insurance.Policy.Api.Controllers
         /// <returns>Not found if ID is not in storage.</returns>
         /// <param name="id">Identifier.</param>
         [HttpDelete("{id}")]
-        public IActionResult Delete(int id)
+        public IActionResult Delete(long id)
         {
             var info = insurancePolicyService.Delete(id);
             if (info == 0)

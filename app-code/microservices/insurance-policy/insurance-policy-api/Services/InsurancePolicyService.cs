@@ -50,7 +50,7 @@ namespace Insurance.Policy.Api.Services
         /// </summary>
         /// <returns>The requested record else NULL</returns>
         /// <param name="id">Identifier.</param>
-        public InsurancePolicy FindById(int id)
+        public InsurancePolicy FindById(long id)
         {
             return this.insurancePolicyRepository.FindById(id);
         }
@@ -80,7 +80,7 @@ namespace Insurance.Policy.Api.Services
         /// </summary>
         /// <returns>The delete.</returns>
         /// <param name="id">Identifier.</param>
-        public int Delete(int id)
+        public int Delete(long id)
         {
             return this.insurancePolicyRepository.Delete(id);
         }

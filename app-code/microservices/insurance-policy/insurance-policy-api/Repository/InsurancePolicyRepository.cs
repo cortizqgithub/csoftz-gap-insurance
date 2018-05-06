@@ -59,7 +59,7 @@ namespace Insurance.Policy.Api.Repository
         /// </summary>
         /// <returns>The requested record else NULL</returns>
         /// <param name="id">Identifier.</param>
-        public InsurancePolicy FindById(int id)
+        public InsurancePolicy FindById(long id)
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
@@ -125,7 +125,7 @@ namespace Insurance.Policy.Api.Repository
         /// </summary>
         /// <returns>The delete.</returns>
         /// <param name="id">Identifier.</param>
-        public int Delete(int id)
+        public int Delete(long id)
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {

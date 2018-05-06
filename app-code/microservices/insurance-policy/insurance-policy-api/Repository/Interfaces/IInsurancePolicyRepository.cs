@@ -35,7 +35,7 @@ namespace Insurance.Policy.Api.Repository.Interfaces
         /// </summary>
         /// <returns>The requested record else NULL</returns>
         /// <param name="id">Identifier.</param>
-        InsurancePolicy FindById(int id);
+        InsurancePolicy FindById(long id);
 
         /// <summary>
         /// Inserts a new record to database storage.
@@ -56,6 +56,6 @@ namespace Insurance.Policy.Api.Repository.Interfaces
         /// </summary>
         /// <returns>The delete.</returns>
         /// <param name="id">Identifier.</param>
-        int Delete(int id);
+        int Delete(long id);
     }
 }
