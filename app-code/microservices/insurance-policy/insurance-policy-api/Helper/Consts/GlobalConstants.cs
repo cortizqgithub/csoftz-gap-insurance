@@ -24,11 +24,21 @@ namespace Insurance.Policy.Api.Helper.Consts
         public const string POSTGRESQL_CONN_STRING = "Server=localhost;Port=5432;Database=csoftz-insurance;Userid=postgres;Password=Ceiba1234!;Pooling=true;MinPoolSize=1;MaxPoolSize=20;";
 
         // Insurance Policy SQL
-        public const string INSURANCE_POLICY_GET_ALL = "select * from insurance_policy;";
-        public const string INSURANCE_POLICY_FIND_BY_ID = "select * from insurance_policy where id = @Id;";
+        public const string INSURANCE_POLICY_GET_ALL = @"select * from insurance_policy;";
+        public const string INSURANCE_POLICY_FIND_BY_ID = @"select * from insurance_policy where ""Id"" = @Id;";
         public const string INSURANCE_POLICY_SAVE = @"insert into insurance_policy(""Id"", ""Name"", ""Description"", ""CoverageType"",
                                                      ""StartDate"", ""CoveragePeriod"", ""Price"", ""RiskType"") values(@Id, @Name,
                                                      @Description, @CoverageType, @StartDate, @CoveragePeriod, @Price, @RiskType)";
+        public const string INSURANCE_POLICY_UPDATE = @"update insurance_policy 
+                                                        set ""Name"" = @Name,
+                                                            ""Description"" = @Description,
+                                                            ""CoverageType"" = @CoverageType,
+                                                            ""StartDate"" = @StartDate,
+                                                            ""CoveragePeriod"" = @CoveragePeriod,
+                                                            ""Price"" = @Price,
+                                                            ""RiskType"" = @RiskType 
+                                                        where ""Id"" = @Id;";
+        public const string INSURANCE_POLICY_DELETE = @"delete from insurance_policy where ""Id"" = @Id;";
 
    }
 }

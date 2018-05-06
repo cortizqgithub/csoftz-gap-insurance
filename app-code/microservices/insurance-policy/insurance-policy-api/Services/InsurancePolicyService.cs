@@ -63,5 +63,25 @@ namespace Insurance.Policy.Api.Services
         {
             return this.insurancePolicyRepository.Save(info);
         }
+
+        /// <summary>
+        /// Update the specified info.
+        /// </summary>
+        /// <returns>Affected rows</returns>
+        /// <param name="info">Information to be changed.</param>
+        public int Update(InsurancePolicy info) 
+        {
+            return this.insurancePolicyRepository.Update(info);    
+        }
+
+        /// <summary>
+        /// Delete the specified id.
+        /// </summary>
+        /// <returns>The delete.</returns>
+        /// <param name="id">Identifier.</param>
+        public int Delete(int id)
+        {
+            return this.insurancePolicyRepository.Delete(id);
+        }
     }
 }

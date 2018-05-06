@@ -45,19 +45,6 @@ namespace Insurance.Policy.Api.Controllers
         [HttpGet]
         public List<InsurancePolicy> GetAll()
         {
-            var ins = new InsurancePolicy()
-            {
-                Id = 1,
-                Name = "info.Name-",
-                Description = "info.Description",
-                CoverageType = 1,
-                StartDate = DateTime.Now,
-                CoveragePeriod = 10,
-                Price = 100000,
-                RiskType = 1
-            };
-            insurancePolicyService.Save(ins);
-
             return insurancePolicyService.GetAll();
         }
     }

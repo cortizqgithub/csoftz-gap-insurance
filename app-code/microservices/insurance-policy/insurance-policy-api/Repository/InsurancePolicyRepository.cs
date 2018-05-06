@@ -90,5 +90,48 @@ namespace Insurance.Policy.Api.Repository
                 return rowsAffected;
             }
         }
+
+        /// <summary>
+        /// Update the specified info.
+        /// </summary>
+        /// <returns>Affected rows</returns>
+        /// <param name="info">Information to be changed.</param>
+        public int Update(InsurancePolicy info)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                int rowsAffected = connection.Execute(GlobalConstants.INSURANCE_POLICY_UPDATE,
+                                                  new
+                                                  {
+                                                      Name = info.Name,
+                                                      Description = info.Description,
+                                                      CoverageType = info.CoverageType,
+                                                      StartDate = info.StartDate,
+                                                      CoveragePeriod = info.CoveragePeriod,
+                                                      Price = info.Price,
+                                                      RiskType = info.RiskType,
+                                                      Id = info.Id
+                                                  });
+                return rowsAffected;
+            }
+        }
+
+        /// <summary>
+        /// Delete the specified id.
+        /// </summary>
+        /// <returns>The delete.</returns>
+        /// <param name="id">Identifier.</param>
+        public int Delete(int id)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                int rowsAffected = connection.Execute(GlobalConstants.INSURANCE_POLICY_UPDATE,
+                                                  new
+                                                  {
+                                                      Id = id
+                                                  });
+                return rowsAffected;
+            }
+        }
     }
 }

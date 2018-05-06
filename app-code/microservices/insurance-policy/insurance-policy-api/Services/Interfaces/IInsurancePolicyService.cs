@@ -41,5 +41,19 @@ namespace Insurance.Policy.Api.Services.Interfaces
         /// <returns>Count</returns>
         /// <param name="info">Information to be stored.</param>
         int Save(InsurancePolicy info);
+
+        /// <summary>
+        /// Update the specified info.
+        /// </summary>
+        /// <returns>Affected rows</returns>
+        /// <param name="info">Information to be changed.</param>
+        int Update(InsurancePolicy info);
+
+        /// <summary>
+        /// Delete the specified id.
+        /// </summary>
+        /// <returns>The delete.</returns>
+        /// <param name="id">Identifier.</param>
+        int Delete(int id);
     }
 }
