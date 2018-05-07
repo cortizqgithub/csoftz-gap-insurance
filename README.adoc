@@ -1,33 +1,29 @@
 = csoftz-gap-insurance README
 
-V1.0.0-May.04/2018
+V1.0.0-May.07/2018
 
 Here we can find an excercise a CRUD interface for insurance policy.
 
 Here we find some folders.
 The main folder is named 'app-code' which contains all the source code for the solution.
-Therein you can find two folders named: 'client' and 'microservices'.
-The 'client' contains an ANGULAR (version 5.x using the Angular CLI to build it) 
-project. NOTE: Not usable at this moment.
+Therein you can find the folder: 'microservices'.
 
 The 'microservices' folder holds a ASP.NET Core (Version 2.x) solution, it is
 thought as it were to be a microservice.
 
 The .NET solution holds two projects. One is a ASP.NET Core Web API which implements
-the whole Rest API. NOTE: All data is held in memory, thus if server is restared, all
-saved data is destroyed.
+the whole REST API. The data storages points to a PostgreSQL server.
 
 The other project is ASP.NET Core MVC Web App to consume that API.
 
 == Guide
 
 To install postgreSQL support.
+Aadd 'ngpgsql' nuget package.
+Then add 'Dapper' ORM add 'dapper' nuget package.
 
-add 'ngpgsql' nuget package.
-
+Follow along this video if you need to use EF Core.
 https://www.youtube.com/watch?v=md20lQut9EE Uses Entity Framework underneath.
-
-Then add 'Dapper' ORM using 
 
 == REST API URLs
 Following you will find the URLs to get to each REST API method.
@@ -36,7 +32,10 @@ Following you will find the URLs to get to each REST API method.
 GET: /insurance/api/v1/coveragetype/all
 
 === Insurance Policy
-GET: /insurance/api/v1/insurancepolicy/all
+GET:    /insurance/api/v1/insurancepolicy/all
+POST:   /insurance/api/v1/insurancepolicy
+PUT:    /insurance/api/v1/insurancepolicy/{id}
+DELETE: /insurance/api/v1/insurancepolicy/{id}
 
 === Risk Type
 GET: /insurance/api/v1/risktype/all

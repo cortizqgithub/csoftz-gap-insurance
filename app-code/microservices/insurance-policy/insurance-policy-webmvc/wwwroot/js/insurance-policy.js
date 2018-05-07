@@ -1,6 +1,6 @@
 // File:     INSURANCE-POLICY.JS
 // Created:  May.06/2018
-// Modified: May.06/2018
+// Modified: May.07/2018
 
 function loadInfo() {
     var options = {};
@@ -11,13 +11,14 @@ function loadInfo() {
         var info = "";
         $("#insurance-policy-list").empty();
         info = "<table style='width:100%'>";
-        info += "<tr><td>ID</td><td>Name</td><td>Description</td>";
-        info += "<td>Coverage Type</td><td>Start Date</td><td>Coverage Period</td>";
-        info += "<td>Price</td><td>Risk Type</td>";
+        info += "<tr><td>&nbsp;</td><td><b>ID</b></td><td><b>Name</b></td><td><b>Description</b></td>";
+        info += "<td><b>Coverage Type</b></td><td><b>Start Date</b></td><td><b>Coverage Period</b></td>";
+        info += "<td><b>Price</b></td><td><b>Risk Type</b></td>";
         info += "</tr>";
 
         data.forEach(function (element) {
             info += "<tr>";
+            info += "<td><input type='radio' name='rdId' value='" + element.id + "'></td>";
             info += "<td>" + element.id + "</td>";
             info += "<td>" + element.name + "</td>";
             info += "<td>" + element.description + "</td>";
@@ -235,6 +236,45 @@ $(document).ready(function () {
             $("#id").focus();
         }
     });
+
+    $("#edit").click(function () {
+        var rdSel = $('input[name=rdId]:checked').val();
+        if (rdSel == undefined) {
+            alert('You must select a record line to edit.');
+            return;
+        }
+        var options = {};
+        options.url = urlInsurancePolicy + '/' + rdSel;
+        options.type = "GET";
+        options.dataType = "json";
+        options.success = function (data) {
+            $('#id').val(data.id);
+            $("#name").val(data.name);
+            $("#description").val(data.description);
+            $("#coverageTypes").val(data.coverageType);
+            $("#startDate").val(data.startDate);
+            $("#coveragePeriod").val(data.coveragePeriod);
+            $("#price").val(data.price);
+            $('#riskTypes').val(data.riskType); 
+        };
+
+        options.error = function () {
+            $("#msg").html("Error while calling the Web API!");
+        };
+        $.ajax(options);
+    });
+
+    $("#clear").click(function () {
+        $('#id').val('');
+        $("#name").val('');
+        $("#description").val('');
+        $("#coverageTypes").val('1');
+        $("#startDate").val('');
+        $("#coveragePeriod").val('');
+        $("#price").val('');
+        $('#riskTypes').val('1');
+    });
+
     loadCoverageTypes();
     loadRiskTypes();
     loadInfo();
