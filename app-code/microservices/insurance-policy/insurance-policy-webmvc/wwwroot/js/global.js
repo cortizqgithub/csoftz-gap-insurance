@@ -1,10 +1,12 @@
 ﻿// File:     GLOBAL.JS
 // Created:  May.06/2018
-// Modified: May.06/2018
+// Modified: May.07/2018
 
 var urlInsurancePolicy = "http://localhost:5000/insurance/api/v1/insurancepolicy";
 var urlCoverageType = "http://localhost:5000/insurance/api/v1/coveragetype";
 var urlRiskType = "http://localhost:5000/insurance/api/v1/risktype";
+var urlUser = "http://localhost:5000/insurance/api/v1/user";
+var urlUserInsurancePolicy = "http://localhost:5000/insurance/api/v1/userinsurancepolicy";
 
 function isANumber(s) {
     var numbers = /^[0-9]+$/;

@@ -4,41 +4,20 @@
 @{
 }
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="js/global.js?v=20180506"></script>
-<script src="js/user-insurance-policy.js?v=20180506"></script>
+<script src="js/global.js?v=20180507"></script>
+<script src="js/user-insurance-policy.js?v=20180507"></script>
 <h1>User Insurance Policy</h1>
 <p id="msg"></p>
-<div id="insurance-policy-list"></div>
-<br/><input type="button" id="edit" value="Edit">
+<div id="users"></div>
+<br/><input type="button" id="loadPolicies" value="Load Policies">
 <br/>
 <h2>Link Insurance Policy</h2>
+<div id="policy-list"></div>
 <form>
     <table>
-       
-        <tr>
-            <td>Coverage Period:</td>
-            <td><input id="coveragePeriod" type="text" /></td>
-        </tr>
-        <tr>
-            <td>Price:</td>
-            <td><input id="price" type="text" /></td>
-        </tr>
-        <tr>
-            <td>Risk Type:</td>
-            <td><select id="riskTypes"></select></td>
-        </tr>
-        <tr>
-            <td colspan="2">&nbsp;</td>
-        </tr>
         <tr>
             <td colspan="2" align="center">
-                <input type="button" id="insert" 
-                       value="Insert" />
-                <input type="button" id="update" 
-                       value="Update" />
-                <input type="button" id="delete" 
-                       value="Delete" />
-                <input type="button" id="clear" value="Clear">
+                <input type="button" id="link" value="Link" />
             </td>
         </tr>
     </table>

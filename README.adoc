@@ -49,6 +49,8 @@ The execution order is as follows:
 == REST API URLs
 Following you will find the URLs to get to each REST API method.
 
+NOTE: The home for rest api is http://localhost:5000
+
 === Coverage Type
 GET: /insurance/api/v1/coveragetype/all
 
@@ -61,8 +63,21 @@ DELETE: /insurance/api/v1/insurancepolicy/{id}
 === Risk Type
 GET: /insurance/api/v1/risktype/all
 
+=== User
+GET: /insurance/api/v1/user/all
+
+=== User Insurance Policy
+GET: /insurance/api/v1/userinsurancepolicy/all
+
 == Web MVC App
 Following are the URLs to use to register *_Insurance Policy_* and link to *_Users_*.
+
+NOTE: 
+====
+The home for web site is http://localhost:5001.
+In the menu bar you will find two entries to Pages to register
+*_Insurance Policies_* and *_User Insurance Policies_*.
+====
 
 === Register Insurance Policy
 http://localhost:5001/InsurancePolicy

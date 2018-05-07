@@ -20,7 +20,7 @@ namespace Insurance.Policy.Web.Controllers
     /// <summary>
     /// Controller to administer linking Insurance Policies to Users
     /// </summary>
-    public class UserController : Controller
+    public class UserInsurancePolicyController : Controller
     {
         /// <summary>
         /// Shows the Index Page for User Insurance Policy Assets.
