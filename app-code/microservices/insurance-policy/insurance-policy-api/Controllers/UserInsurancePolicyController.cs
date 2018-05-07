@@ -101,6 +101,9 @@ namespace Insurance.Policy.Api.Controllers
         public string LinkInsurancePolicy(long userId, [FromBody] string ids)
         {
             // TODO: May.07/2018 (no time left as today).
+            // Logic would be to pass the ids to service and there
+            // for given user all existing insurance polices are removed.
+            // Then for each id it would create a new entry in table.
             return ids;
         }
 
