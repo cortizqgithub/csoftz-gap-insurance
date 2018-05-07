@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <RootNamespace>Insurance.Policy.Web</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,6 +15,7 @@
 
   <ItemGroup>
     <Folder Include="Views\InsurancePolicy\" />
+    <Folder Include="Views\UserInsurancePolicy\" />
   </ItemGroup>
   <ItemGroup>
     <None Remove="Views\InsurancePolicy\index.html" />

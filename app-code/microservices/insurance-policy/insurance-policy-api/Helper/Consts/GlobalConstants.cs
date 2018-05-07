@@ -3,7 +3,7 @@
 /* Description:   Global application Constants                                */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
 /* Date:          May.04/2018                                                 */
-/* Last Modified: May.06/2018                                                 */
+/* Last Modified: May.07/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ                                                 */
 /*----------------------------------------------------------------------------*/
@@ -41,6 +41,8 @@ namespace Insurance.Policy.Api.Helper.Consts
         public const string INSURANCE_POLICY_DELETE = @"delete from insurance_policy where ""Id"" = @Id;";
         public const string COVERAGE_TYPE_GET_ALL = @"select coverage_type_id CoverageTypeId, name from insurance_coverage_type;";
         public const string RISK_TYPE_GET_ALL = @"select insurance_risk_type RiskTypeId, Name from insurance_risk_type;";
+        public const string USER_GET_ALL = @"select user_id as ""UserId"", name, last_name ""LastName"" from insurance_user;";
+        public const string USER_INSURANCE_POLICY_GET_ALL = @"select user_id ""UserId"", insurance_policy_id ""InsurancePolicyId"" from user_insurance_policy;";
 
    }
 }

@@ -1,31 +1,31 @@
-﻿/*----------------------------------------------------------------------------*/
-/* Source File:   INSURANCEPOLICYCONTROLLER.CS                                */
-/* Description:   Controller to administer Insurance Policy assets.           */
+/*----------------------------------------------------------------------------*/
+/* Source File:   USERINSURANCEPOLICYCONTROLLER.CS                            */
+/* Description:   Controller to administer linking Insurance Policies to Users*/
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
-/* Date:          May.06/2018                                                 */
-/* Last Modified: May.06/2018                                                 */
+/* Date:          May.07/2018                                                 */
+/* Last Modified: May.07/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ.                                                */
 /*----------------------------------------------------------------------------*/
 /*-----------------------------------------------------------------------------
  History
- May.06/2018 COQ  File created.
+ May.07/2018 COQ  File created.
  -----------------------------------------------------------------------------*/
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace insurancepolicywebmvc.Controllers
+namespace Insurance.Policy.Web.Controllers
 {
     /// <summary>
-    /// Controller to administer Insurance Policy assets. 
+    /// Controller to administer linking Insurance Policies to Users
     /// </summary>
-    public class InsurancePolicyController : Controller
+    public class UserController : Controller
     {
         /// <summary>
-        /// Shows the Index Page for Insurance Policy Assets.
+        /// Shows the Index Page for User Insurance Policy Assets.
         /// </summary>
-        /// <returns>The Index page for Insurance Policy</returns>
+        /// <returns>The Index page for User Insurance Policy</returns>
         public IActionResult Index()
         {
             return View();

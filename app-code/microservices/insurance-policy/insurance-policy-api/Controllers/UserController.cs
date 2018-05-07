@@ -1,8 +1,8 @@
 ﻿/*----------------------------------------------------------------------------*/
-/* Source File:   RISKTYPECONTROLLER.CS                                       */
-/* Description:   REST API Controller for Risk Type Domain Objects            */
+/* Source File:   USERCONTROLLER.CS                                           */
+/* Description:   REST API Controller for User Domain Objects                 */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
-/* Date:          May.06/2018                                                 */
+/* Date:          May.07/2018                                                 */
 /* Last Modified: May.07/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ                                                 */
@@ -10,7 +10,7 @@
 
 /*-----------------------------------------------------------------------------
  History
- May.06/2018 COQ  File created.
+ May.07/2018 COQ  File created.
  -----------------------------------------------------------------------------*/
 using System.Collections.Generic;
 using Insurance.Policy.Api.Domain;
@@ -20,31 +20,31 @@ using Microsoft.AspNetCore.Mvc;
 namespace Insurance.Policy.Api.Controllers
 {
     /// <summary>
-    /// REST API Controller for Risk Type Domain Objects
+    /// REST API Controller for User Domain Objects
     /// </summary>
     [Route("insurance/api/v1/[controller]")]
-    public class RiskTypeController : Controller
+    public class UserController : Controller
     {
-        private IRiskTypeService riskTypeService;
+        private IUserService userService;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="T:Insurance.Policy.Api.Controllers.RiskTypeController"/> class.
+        /// Initializes a new instance of the <see cref="T:Insurance.Policy.Api.Controllers.UserController"/> class.
         /// </summary>
-        /// <param name="riskTypeService">Injects an instance to Risk type service.</param>
-        public RiskTypeController(IRiskTypeService riskTypeService)
+        /// <param name="userService">Injects an instance to User service.</param>
+        public UserController(IUserService userService)
         {
-            this.riskTypeService = riskTypeService;
+            this.userService = userService;
         }
 
         /// <summary>
-        /// Responds to the URL: GET /insurance/api/v1/risktype/all
+        /// Responds to the URL: GET /insurance/api/v1/user/all
         /// Retrieves all records.
         /// </summary>
-        /// <returns>A list of all Risk Type</returns>
+        /// <returns>A list of all User</returns>
         [HttpGet("all")]
-        public List<RiskType> GetAll()
+        public List<User> GetAll()
         {
-            return riskTypeService.GetAll();
+            return userService.GetAll();
         }
     }
 }

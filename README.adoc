@@ -16,14 +16,35 @@ the whole REST API. The data storages points to a PostgreSQL server.
 
 The other project is ASP.NET Core MVC Web App to consume that API.
 
+In order to run this application, you will need to have a PostgreSQL server (v10) used.
+The 'docs' directory contains a 'database' folder with the required scripts to create 
+and populate a initial database.
+
 == Guide
 
 To install postgreSQL support.
-Aadd 'ngpgsql' nuget package.
+Add 'ngpgsql' nuget package.
 Then add 'Dapper' ORM add 'dapper' nuget package.
 
 Follow along this video if you need to use EF Core.
 https://www.youtube.com/watch?v=md20lQut9EE Uses Entity Framework underneath.
+
+== Database
+This application uses 'postgreSQL', next is the version used:
+PostgreSQL 10.1 on x86_64-apple-darwin, compiled by i686-apple-darwin11-llvm-gcc-4.2 (GCC) 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00), 64-bit
+
+NOTE: The project was build on a MacBook Pro, using Mac OS X (High Sierra).
+
+The folder *_'docs/database/postgresql'_* contains the required scripts to create 
+the database objects.
+
+The execution order is as follows:
+
+- create_database.sql
+- create_sequences.sql
+- create_tables.sql
+- create_view.sql
+- insert_data.sql
 
 == REST API URLs
 Following you will find the URLs to get to each REST API method.
@@ -39,3 +60,12 @@ DELETE: /insurance/api/v1/insurancepolicy/{id}
 
 === Risk Type
 GET: /insurance/api/v1/risktype/all
+
+== Web MVC App
+Following are the URLs to use to register *_Insurance Policy_* and link to *_Users_*.
+
+=== Register Insurance Policy
+http://localhost:5001/InsurancePolicy
+
+=== Link Insurance Policies to Users
+http://localhost:5001/UserInsurancePolicy

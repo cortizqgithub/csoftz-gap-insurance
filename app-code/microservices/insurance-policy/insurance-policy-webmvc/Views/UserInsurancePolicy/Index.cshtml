@@ -1,0 +1,45 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/global.js?v=20180506"></script>
+<script src="js/user-insurance-policy.js?v=20180506"></script>
+<h1>User Insurance Policy</h1>
+<p id="msg"></p>
+<div id="insurance-policy-list"></div>
+<br/><input type="button" id="edit" value="Edit">
+<br/>
+<h2>Link Insurance Policy</h2>
+<form>
+    <table>
+       
+        <tr>
+            <td>Coverage Period:</td>
+            <td><input id="coveragePeriod" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Price:</td>
+            <td><input id="price" type="text" /></td>
+        </tr>
+        <tr>
+            <td>Risk Type:</td>
+            <td><select id="riskTypes"></select></td>
+        </tr>
+        <tr>
+            <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="button" id="insert" 
+                       value="Insert" />
+                <input type="button" id="update" 
+                       value="Update" />
+                <input type="button" id="delete" 
+                       value="Delete" />
+                <input type="button" id="clear" value="Clear">
+            </td>
+        </tr>
+    </table>
+</form>
