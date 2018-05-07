@@ -14,13 +14,13 @@ function isANumber(s) {
 
 function loadCoverageTypes() {
     var options = {};
-    options.url = urlCoverageType;
+    options.url = urlCoverageType + '/all';
     options.type = "GET";
     options.dataType = "json";
     options.success = function (data) {
         $("#coverageTypes").empty();
         data.forEach(function (element) {
-            $("#coverageTypes").append("<option value=" + element.id + ">" + element.name + "</option>");
+            $("#coverageTypes").append("<option value=" + element.coverageTypeId + ">" + element.name + "</option>");
         });
     };
     options.error = function () {
@@ -31,13 +31,13 @@ function loadCoverageTypes() {
 
 function loadRiskTypes(idCountry) {
     var options = {};
-    options.url = urlRiskType;
+    options.url = urlRiskType + '/all';
     options.type = "GET";
     options.dataType = "json";
     options.success = function (data) {
         $("#riskTypes").empty();
         data.forEach(function (element) {
-            $("#riskTypes").append("<option value=" + element.id + ">" + element.name + "</option>");
+            $("#riskTypes").append("<option value=" + element.riskTypeId + ">" + element.name + "</option>");
         });
     };
     options.error = function () {

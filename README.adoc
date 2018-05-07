@@ -33,10 +33,10 @@ Then add 'Dapper' ORM using
 Following you will find the URLs to get to each REST API method.
 
 === Coverage Type
-GET: /insurance/api/v1/coveragetype
+GET: /insurance/api/v1/coveragetype/all
 
 === Insurance Policy
-GET: /insurance/api/v1/insurancepolicy
+GET: /insurance/api/v1/insurancepolicy/all
 
 === Risk Type
-GET: /insurance/api/v1/risktype
+GET: /insurance/api/v1/risktype/all

@@ -42,7 +42,7 @@ namespace Insurance.Policy.Api.Controllers
         /// Retrieves all records.
         /// </summary>
         /// <returns>A list of all Coverage Type</returns>
-        [HttpGet]
+        [HttpGet("all")]
         public List<CoverageType> GetAll()
         {
             return coverageTypeService.GetAll();

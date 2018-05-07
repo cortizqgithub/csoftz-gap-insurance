@@ -42,7 +42,7 @@ namespace Insurance.Policy.Api.Controllers
         /// Retrieves all records.
         /// </summary>
         /// <returns>A list of all Insurance Policy</returns>
-        [HttpGet]
+        [HttpGet("all")]
         public List<InsurancePolicyView> GetAll()
         {
             return insurancePolicyService.GetAll();
@@ -72,7 +72,7 @@ namespace Insurance.Policy.Api.Controllers
         /// <returns>The created record and HTTP status created</returns>
         /// <param name="item">Record information to create.</param>
         [HttpPost]
-        public IActionResult Create([FromBody] InsurancePolicy item)
+        public IActionResult Save([FromBody] InsurancePolicy item)
         {
             if (item == null)
             {

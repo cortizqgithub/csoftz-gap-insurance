@@ -129,7 +129,7 @@ namespace Insurance.Policy.Api.Repository
         {
             using (var connection = new NpgsqlConnection(connectionString))
             {
-                int rowsAffected = connection.Execute(GlobalConstants.INSURANCE_POLICY_UPDATE,
+                int rowsAffected = connection.Execute(GlobalConstants.INSURANCE_POLICY_DELETE,
                                                   new
                                                   {
                                                       Id = id

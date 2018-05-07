@@ -4,7 +4,7 @@
 
 function loadInfo() {
     var options = {};
-    options.url = urlInsurancePolicy;
+    options.url = urlInsurancePolicy + '/all';
     options.type = "GET";
     options.dataType = "json";
     options.success = function (data) {
@@ -15,7 +15,7 @@ function loadInfo() {
         info += "<td>Coverage Type</td><td>Start Date</td><td>Coverage Period</td>";
         info += "<td>Price</td><td>Risk Type</td>";
         info += "</tr>";
-        
+
         data.forEach(function (element) {
             info += "<tr>";
             info += "<td>" + element.id + "</td>";
@@ -40,109 +40,185 @@ function loadInfo() {
 
 $(document).ready(function () {
     $("#insert").click(function () {
-        var addressName = $("#name").val();
-        var stateName = $("#states option:selected").text();
-        var cityName = $("#cities option:selected").text();
-       
-        if (stateName === ""){
-            alert("You must select one State.");
-            $("#states").focus();
-            return;
-        }
+        var name = $("#name").val();
+        var description = $("#description").val();
+        var coverageType = $("#coverageTypes option:selected").val();
+        var startDate = $("#startDate").val();
+        var coveragePeriod = $("#coveragePeriod").val();
+        var price = $("#price").val();
+        var riskType = $('#riskTypes option:selected').val();
 
-        if (cityName === "") {
-            alert("You must select one City.");
-            $("#cities").focus();
-            return;
-        }
-
-        if (addressName === "") {
-            alert("You must type a name for the Address.");
+        if (name === "") {
+            alert("You must select a name.");
             $("#name").focus();
+            return;
+        }
+
+        if (description === "") {
+            alert("You must select a Description.");
+            $("#description").focus();
+            return;
+        }
+
+        if (startDate === "") {
+            alert("You must select start date (yyyy-mm-dd)");
+            $('#startDate').focus();
+            return;
+        }
+
+        if (coveragePeriod === "") {
+            alert("You must select a Coverage Period (numeri)");
+            $('#coveragePeriod').focus();
+            return;
         }
         else {
-            var options = {};
-            options.url = urlInsurancePolicy;
-            options.type = "POST";
-
-            var obj = {};
-            obj.addressName = addressName;
-            obj.idCountry = $("#countries option:selected").val();
-            obj.countryName = $("#countries option:selected").text();
-            obj.idState = $("#states option:selected").val();
-            obj.stateName = $("#states option:selected").text();
-            obj.idCity = $("#cities option:selected").val();
-            obj.cityName = $("#cities option:selected").text();
-
-            options.data = JSON.stringify(obj);
-            console.log(options.data);
-            options.contentType = "application/json";
-            options.dataType = "json";
-
-            options.success = function (msg) {
-                $("#msg").html(msg);
-                loadInfo();
-            };
-            options.error = function () {
-                $("#msg").html("Error while calling the Web API!");
-            };
-            $.ajax(options);
+            if (!isANumber(coveragePeriod)) {
+                alert("Coverage Period must be numeric");
+                $('#coveragePeriod').focus();
+                return;
+            }
         }
+
+        if (price === "") {
+            alert("You must select a price. (Numeric)");
+            $('#price').focus();
+            return;
+        }
+        else {
+            if (!isANumber(price)) {
+                alert("Price must be numeric");
+                $('#price').focus();
+                return;
+            }
+        }
+
+        var options = {};
+        options.url = urlInsurancePolicy;
+        options.type = "POST";
+
+        var obj = {};
+        obj.name = name;
+        obj.description = description;
+        obj.coverageType = coverageType;
+        obj.startDate = startDate;
+        obj.coveragePeriod = coveragePeriod;
+        obj.price = price;
+        obj.riskType = riskType;
+        options.data = JSON.stringify(obj);
+        console.log(options.data);
+        options.contentType = "application/json";
+        options.dataType = "json";
+
+        options.success = function (msg) {
+            $("#msg").html(msg);
+            loadInfo();
+        };
+        options.error = function () {
+            $("#msg").html("Error while calling the Web API!");
+        };
+        $.ajax(options);
     });
 
     $("#update").click(function () {
-        var idAddress = $("#id").val();
-        var addressName = $("#name").val();
-        var isValid = true;
+        var id = $('#id').val();
+        var name = $("#name").val();
+        var description = $("#description").val();
+        var coverageType = $("#coverageTypes option:selected").val();
+        var startDate = $("#startDate").val();
+        var coveragePeriod = $("#coveragePeriod").val();
+        var price = $("#price").val();
+        var riskType = $('#riskTypes option:selected').val();
 
-        if (!isANumber(idAddress)) {
-            alert("Required ID is not a number");
-            $("#id").focus();
-            isValid = false;
+        if (id === "") {
+            alert("You must have a valid id.");
+            $('#id').focus();
+            return;
         }
-
-        if (addressName === "") {
-            alert("You must type a name for the Address.");
+        else {
+            if (!isANumber(id)) {
+                alert("Id must be numeric");
+                $('#id').focus();
+                return;
+            }
+        }
+        if (name === "") {
+            alert("You must select a name.");
             $("#name").focus();
-            isValid = false;
+            return;
         }
 
-        if (isValid) {
-            var options = {};
-            options.url = urlInsurancePolicy + "/" + idAddress;
-            options.type = "PUT";
-
-            var obj = {};
-            obj.idAddress = idAddress;
-            obj.addressName = addressName;
-            obj.idCountry = $("#countries option:selected").val();
-            obj.countryName = $("#countries option:selected").text();
-            obj.idState = $("#states option:selected").val();
-            obj.stateName = $("#states option:selected").text();
-            obj.idCity = $("#cities option:selected").val();
-            obj.cityName = $("#cities option:selected").text();
-
-            options.data = JSON.stringify(obj);
-            console.log(options.data);
-            options.contentType = "application/json";
-            options.dataType = "json";
-            options.success = function (msg) {
-                $("#msg").html(msg);
-                loadInfo();
-            };
-            options.error = function (a, b, c) {
-                $("#msg").html("Error while calling the Web API!");
-            };
-            $.ajax(options);
+        if (description === "") {
+            alert("You must select a Description.");
+            $("#description").focus();
+            return;
         }
+
+        if (startDate === "") {
+            alert("You must select start date (yyyy-mm-dd)");
+            $('#startDate').focus();
+            return;
+        }
+
+        if (coveragePeriod === "") {
+            alert("You must select a Coverage Period (numeri)");
+            $('#coveragePeriod').focus();
+            return;
+        }
+        else {
+            if (!isANumber(coveragePeriod)) {
+                alert("Coverage Period must be numeric");
+                $('#coveragePeriod').focus();
+                return;
+            }
+        }
+
+        if (price === "") {
+            alert("You must select a price. (Numeric)");
+            $('#price').focus();
+            return;
+        }
+        else {
+            if (!isANumber(price)) {
+                alert("Price must be numeric");
+                $('#price').focus();
+                return;
+            }
+        }
+
+        var options = {};
+        options.url = urlInsurancePolicy + '/' + id;
+        options.type = "PUT";
+
+        var obj = {};
+        obj.id = id;
+        obj.name = name;
+        obj.description = description;
+        obj.coverageType = coverageType;
+        obj.startDate = startDate;
+        obj.coveragePeriod = coveragePeriod;
+        obj.price = price;
+        obj.riskType = riskType;
+        options.data = JSON.stringify(obj);
+        console.log(options.data);
+        options.contentType = "application/json";
+        options.dataType = "json";
+
+        options.success = function (msg) {
+            $("#msg").html(msg);
+            loadInfo();
+        };
+        options.error = function () {
+            $("#msg").html("Error while calling the Web API!");
+        };
+        $.ajax(options);
     });
 
     $("#delete").click(function () {
-        var idAddress = $("#id").val();
+        var id = $('#id').val();
 
-        if (isANumber(idAddress)) {
+        if (isANumber(id)) {
             var options = {};
-            options.url = urlInsurancePolicy + "/" + idAddress;
+            options.url = urlInsurancePolicy + "/" + id;
             options.type = "DELETE";
             options.datatype = "json";
             options.success = function (msg) {
