@@ -68,6 +68,7 @@ GET: /insurance/api/v1/user/all
 
 === User Insurance Policy
 GET: /insurance/api/v1/userinsurancepolicy/all
+GET: /insurance/api/v1/userinsurancepolicy/all/{userId}
 
 == Web MVC App
 Following are the URLs to use to register *_Insurance Policy_* and link to *_Users_*.

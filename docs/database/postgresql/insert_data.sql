@@ -10,3 +10,7 @@ insert into insurance_coverage_type(name) values('Loss');
 
 insert into insurance_user(name, last_name) values ('John','Wayne');
 insert into insurance_user(name, last_name) values ('Carlos', 'Ortiz');
+
+insert into user_insurance_policy values(1, 2);
+insert into user_insurance_policy values(2, 1);
+insert into user_insurance_policy values(2, 4);

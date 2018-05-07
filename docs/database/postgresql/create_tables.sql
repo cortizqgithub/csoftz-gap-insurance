@@ -85,7 +85,7 @@ CREATE TABLE public.user_insurance_policy
 (
     user_id bigint NOT NULL,
     insurance_policy_id bigint NOT NULL,
-    CONSTRAINT user_insurance_policy_pkey PRIMARY KEY (user_id)
+    CONSTRAINT user_insurance_policy_pkey PRIMARY KEY (user_id, insurance_policy_id)
 )
 WITH (
     OIDS = FALSE
