@@ -3,7 +3,7 @@
 /* Description:   Main entry point to configure ASP.NET Core Web Api app.     */
 /* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
 /* Date:          May.04/2018                                                 */
-/* Last Modified: May.06/2018                                                 */
+/* Last Modified: May.07/2018                                                 */
 /* Version:       1.1                                                         */
 /* Copyright (c), 2018 CSoftZ.                                                */
 /*----------------------------------------------------------------------------*/
@@ -42,12 +42,25 @@ namespace Insurance.Policy.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<IInsurancePolicyRepository>(new InsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING));
-            services.AddSingleton<IInsurancePolicyService>(new InsurancePolicyService(new InsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING)));
-            services.AddSingleton<ICoverageTypeRepository>(new CoverageTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING));
-            services.AddSingleton<ICoverageTypeService>(new CoverageTypeService(new CoverageTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING)));
-            services.AddSingleton<IRiskTypeRepository>(new RiskTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING));
-            services.AddSingleton<IRiskTypeService>(new RiskTypeService(new RiskTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING)));
+            var insurancePolicyRepository = new InsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING);
+            services.AddSingleton<IInsurancePolicyRepository>(insurancePolicyRepository);
+            services.AddSingleton<IInsurancePolicyService>(new InsurancePolicyService(insurancePolicyRepository));
+
+            var coverageTypeRepository = new CoverageTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING);
+            services.AddSingleton<ICoverageTypeRepository>(coverageTypeRepository);
+            services.AddSingleton<ICoverageTypeService>(new CoverageTypeService(coverageTypeRepository));
+
+            var riskTypeRepository = new RiskTypeRepository(GlobalConstants.POSTGRESQL_CONN_STRING);
+            services.AddSingleton<IRiskTypeRepository>(riskTypeRepository);
+            services.AddSingleton<IRiskTypeService>(new RiskTypeService(riskTypeRepository));
+
+            var userRepository = new UserRepository(GlobalConstants.POSTGRESQL_CONN_STRING);
+            services.AddSingleton<IUserRepository>(userRepository);
+            services.AddSingleton<IUserService>(new UserService(userRepository));
+
+            var userInsurancePolicyRepository = new UserInsurancePolicyRepository(GlobalConstants.POSTGRESQL_CONN_STRING);
+            services.AddSingleton<IUserInsurancePolicyRepository>(userInsurancePolicyRepository);
+            services.AddSingleton<IUserInsurancePolicyService>(new UserInsurancePolicyService(userInsurancePolicyRepository));
 
             services.AddCors(options =>
             {

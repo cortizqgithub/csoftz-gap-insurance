@@ -75,13 +75,15 @@ Following are the URLs to use to register *_Insurance Policy_* and link to *_Use
 [NOTE] 
 ====
 The home for web site is http://localhost:5001.
-In the menu bar you will find two entries to Pages to register
+
+In the menu bar you will find two entries to Pages to Register 
 *_Insurance Policy_* and *_User Insurance Policy_*.
 ====
 
 === Register Insurance Policy
-The menu entry is called 
+The menu entry is called *_Insurance Policy_*
 http://localhost:5001/InsurancePolicy
 
 === Link Insurance Policies to Users
+The menu entry is called *_User Insurance Policy_*.
 http://localhost:5001/UserInsurancePolicy

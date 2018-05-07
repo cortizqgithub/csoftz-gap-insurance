@@ -1,7 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿/*----------------------------------------------------------------------------*/
+/* Source File:   STARTUP.CS                                                  */
+/* Description:   Application configuration entry point.                      */
+/* Author:        Carlos Adolfo Ortiz Quirós (COQ)                            */
+/* Date:          May.06/2018                                                 */
+/* Last Modified: May.07/2018                                                 */
+/* Version:       1.1                                                         */
+/* Copyright (c), 2018 CSoftZ.                                                */
+/*----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------
+ History
+ May.06/2018 COQ  File created.
+ -----------------------------------------------------------------------------*/
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -9,8 +18,15 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace insurance_policy_webmvc
 {
+    /// <summary>
+    /// Application configuration entry point.
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="T:insurance_policy_webmvc.Startup"/> class.
+        /// </summary>
+        /// <param name="configuration">Configuration.</param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
