@@ -33,21 +33,34 @@ function loadInfo() {
 }
 
 function loadPolicies(userId) {
-var options = {};
-    options.url = urlUserInsurancePolicy + '/' + userId;
+    var options = {};
+    options.url = urlUserInsurancePolicy + '/all/' + userId;
     options.type = "GET";
     options.dataType = "json";
     options.success = function (data) {
         var info = "";
         $("#policy-list").empty();
         info = "<table style='width:100%'>";
-        info += "<tr><td>&nbsp;</td><td><b>User ID</b></td><td><b>InsurancePolicyId</b></td>";
+        info += "<tr><td>&nbsp;</td><td><b>ID</b></td><td><b>Name</b></td><td><b>Description</b></td>";
+        info += "<td><b>Coverage Type</b></td><td><b>Start Date</b></td><td><b>Coverage Period</b></td>";
+        info += "<td><b>Price</b></td><td><b>Risk Type</b></td>";
         info += "</tr>";
+
         data.forEach(function (element) {
             info += "<tr>";
-            info += "<td><input type='check' name='chkId' value='" + element.InsurancePolicyId + "'></td>";
-            info += "<td>" + element.userId + "</td>";
-            info += "<td>" + element.InsurancePolicyId + "</td>";
+            info += "<td><input type='checkbox' name='chkId' value='" + element.id; + "' ";
+            if (element.selected === 1) {
+               info += " checked "
+            }
+            info += "'></td>";
+            info += "<td>" + element.id + "</td>";
+            info += "<td>" + element.name + "</td>";
+            info += "<td>" + element.description + "</td>";
+            info += "<td>" + element.coverageTypeName + "</td>";
+            info += "<td>" + element.startDate + "</td>";
+            info += "<td>" + element.coveragePeriod + "</td>";
+            info += "<td>" + element.price + "</td>";
+            info += "<td>" + element.riskTypeName + "</td>";
             info += "</tr>";
         });
         info += "</table>";
@@ -68,11 +81,14 @@ $(document).ready(function () {
             return;
         }
         loadPolicies(rdSel);
-
     });
 
     $("#link").click(function () {
-        
+        var selected = [];
+        $('#checkboxes input:checked').each(function() {
+            selected.push($(this).val());
+        });
+        console.log(selected);
     });
 
     loadInfo();

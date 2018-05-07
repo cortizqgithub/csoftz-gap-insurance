@@ -27,5 +27,13 @@ namespace Insurance.Policy.Api.Services.Interfaces
         /// </summary>
         /// <returns>List of existing records</returns>
         List<UserInsurancePolicy> GetAll();
+
+        /// <summary>
+        /// Gets all records in User Insurance Policty Table filterd
+        /// by UserId.
+        /// </summary>
+        /// <returns>List of existing records with search criteria.</returns>
+        /// <param name="userId">User identifier.</param>
+        List<UserInsurancePolicy> GetAllByUser(long userId);
     }
 }

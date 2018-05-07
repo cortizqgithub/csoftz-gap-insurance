@@ -44,5 +44,16 @@ namespace Insurance.Policy.Api.Services
         {
             return this.userInsurancePolicyRepository.GetAll();
         }
+
+        /// <summary>
+        /// Gets all records in User Insurance Policty Table filterd
+        /// by UserId.
+        /// </summary>
+        /// <returns>List of existing records with search criteria.</returns>
+        /// <param name="userId">User identifier.</param>
+        public List<UserInsurancePolicy> GetAllByUser(long userId) 
+        {
+            return this.userInsurancePolicyRepository.GetAllByUser(userId);
+        }
     }
 }

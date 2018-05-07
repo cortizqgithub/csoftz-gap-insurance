@@ -51,5 +51,23 @@ namespace Insurance.Policy.Api.Repository
                 return connection.Query<UserInsurancePolicy>(GlobalConstants.USER_INSURANCE_POLICY_GET_ALL).ToList(); ;
             }
         }
+
+        /// <summary>
+        /// Gets all records in User Insurance Policty Table filterd
+        /// by UserId.
+        /// </summary>
+        /// <returns>List of existing records with search criteria.</returns>
+        /// <param name="userId">User identifier.</param>
+        public List<UserInsurancePolicy> GetAllByUser(long userId)
+        {
+            using (var connection = new NpgsqlConnection(connectionString))
+            {
+                return connection.Query<UserInsurancePolicy>(GlobalConstants.USER_INSURANCE_POLICY_GET_ALL_USER_ID,
+                                                             new
+                                                             {
+                                                                 Id = userId
+                                                             }).ToList();
+            }
+        }
     }
 }

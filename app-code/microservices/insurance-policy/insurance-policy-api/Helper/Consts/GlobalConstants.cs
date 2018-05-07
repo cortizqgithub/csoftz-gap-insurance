@@ -43,6 +43,7 @@ namespace Insurance.Policy.Api.Helper.Consts
         public const string RISK_TYPE_GET_ALL = @"select insurance_risk_type RiskTypeId, Name from insurance_risk_type;";
         public const string USER_GET_ALL = @"select user_id as ""UserId"", name, last_name ""LastName"" from insurance_user;";
         public const string USER_INSURANCE_POLICY_GET_ALL = @"select user_id ""UserId"", insurance_policy_id ""InsurancePolicyId"" from user_insurance_policy;";
+        public const string USER_INSURANCE_POLICY_GET_ALL_USER_ID = @"select user_id ""UserId"", insurance_policy_id ""InsurancePolicyId"" from user_insurance_policy where user_id = @Id;";
 
    }
 }

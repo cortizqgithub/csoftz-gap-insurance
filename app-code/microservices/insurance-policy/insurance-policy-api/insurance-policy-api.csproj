@@ -17,6 +17,7 @@
     <Folder Include="Helper\" />
     <Folder Include="Helper\Consts\" />
     <Folder Include="Domain\View\" />
+    <Folder Include="Domain\Computed\" />
   </ItemGroup>
 
   <ItemGroup>
